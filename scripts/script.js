@@ -21,8 +21,6 @@ function lancerJeu() {
             score++;
         };
         afficherResultat(score, i);
-        console.log(inputEcriture.value);
-        console.log(zoneProposition.innerHTML);
         afficherProposition(listeMots[i]);
         i++;
         inputEcriture.value = "";
