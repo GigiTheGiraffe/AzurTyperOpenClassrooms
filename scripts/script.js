@@ -6,7 +6,7 @@ let i = 0;
 let listeProposition = listeMots;
 
 function afficherResultat(score, nombreQuestions) {
-    zoneScore.textContent = `${score} | ${nombreQuestions}`;
+    zoneScore.textContent = `Vous réussi ${score} fois sur ${nombreQuestions}`;
 }
 
 let zoneProposition = document.querySelector(".zoneProposition");
@@ -17,12 +17,11 @@ function afficherProposition(mot) {
 
 afficherProposition("Choisissez votre option au-dessus");
 
-let radioBtn = document.querySelectorAll(".optionSource input");
-console.log(radioBtn)
+let radioBtn = document.querySelectorAll(`input[name="optionSource"]`);
 
 
-for (let j = 0; j < radioBtn.length; j++) {
-    radioBtn[j].addEventListener("change", (event) => {
+for (const element of radioBtn) {
+    element.addEventListener("change", (event) => {
         if (event.target.value === "1") {
             listeProposition = listeMots;
         } else {
@@ -55,4 +54,3 @@ function lancerJeu() {
         }
     });
 }
-
